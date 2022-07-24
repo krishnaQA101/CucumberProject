@@ -12,6 +12,7 @@ public class execution {
 		
 		System.out.println(Arrays.asList(str));
 		
+		System.out.println(456789);
 		
 		
 	}
