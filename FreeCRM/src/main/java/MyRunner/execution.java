@@ -1,20 +1,28 @@
 package MyRunner;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class execution {
 
 	public static void main(String[] args) {
 	
-		String s="test1,test2,test3";
+		System.out.println(select(1));
 		
-		String[] str=s.split(",");
-		
-		System.out.println(Arrays.asList(str));
-		
-		System.out.println(456789);
 		
 		
 	}
 
+	static String select(int number) {
+	    String output;
+	    switch (number) {
+	        case 0:
+	        default:
+	        case 1:
+	            output = "positive";
+	    }
+	    return output;
+	}
 }
