@@ -1,10 +1,17 @@
 package stepDefinition;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,19 +26,24 @@ public class LoginStepDefinition {
 	@Given("^User is already on Login Page$")
 	public void user_is_already_on_Login_Page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Desktop\\framework\\framework\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\OneDrive\\Desktop\\framework\\framework\\drivers\\chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
+		//driver.manage().timeouts().pageLoadTimeout(0, Time)
 		driver.get("https://ui.freecrm.com/");
+		SessionId k=((RemoteWebDriver)driver).getSessionId();
+		System.out.println(k);
 	}
 
-	@When("^title of the page is Free CRM$")
-	public void title_of_the_page_is_Free_CRM() throws Throwable {
+	@When("title of the page is Free CRM {string}")
+	public void title_of_the_page_is_free_crm(String string) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(2000);
 	    String title=driver.getTitle();
 	    String expected_title="Google";
 	    Assert.assertEquals(expected_title, title);
+	    Alert alert=driver.switchTo().alert();
+	  
 	}
 
 	@Then("^the User provides the Username$")

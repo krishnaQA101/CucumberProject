@@ -7,9 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "C:\\Users\\DELL\\Desktop\\framework\\FreeCRM\\src\\main\\java\\Features"
+		features = "C:\\Users\\DELL\\OneDrive\\Desktop\\framework\\FreeCRM\\src\\main\\java\\Features"
 		,glue={"stepDefinition"}
-		,tags = ("@Firefox")
+		,dryRun = true
 		)
 
 public class testRunner {

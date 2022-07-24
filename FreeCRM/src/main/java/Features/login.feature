@@ -19,11 +19,11 @@
 
 
 Feature: Free CRM Login Feature
-
+Background: Login to FRee CRM
   @Google
   Scenario: Free CRM Login Test Scenario
   Given User is already on Login Page
-  When title of the page is Free CRM
+  When title of the page is Free CRM "string"
   Then the User provides the Username
   And the User enters the Password 
   And User clicks on the Login button
@@ -37,6 +37,8 @@ Feature: Free CRM Login Feature
   And the User enters the Password 
   And User clicks on the Login button
   Then User verifies that the user is landing on the Home Page
+  
+  
   
   #@tag2
   #Scenario Outline: Title of your scenario outline
