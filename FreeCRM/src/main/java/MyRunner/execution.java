@@ -9,20 +9,18 @@ public class execution {
 
 	public static void main(String[] args) {
 	
-		System.out.println(select(1));
+		List strings = new ArrayList<>();
+		strings.add("5");
+		strings.add("5");
+		strings.add("5");
+		strings.add("5");
+		System.out.println(strings.remove(1));
+		System.out.println(strings.remove("A"));
+		System.out.println(strings.remove("B"));
 		
 		
 		
 	}
 
-	static String select(int number) {
-	    String output;
-	    switch (number) {
-	        case 0:
-	        default:
-	        case 1:
-	            output = "positive";
-	    }
-	    return output;
-	}
+	
 }
